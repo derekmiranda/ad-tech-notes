@@ -11,5 +11,5 @@
 
 ## Sources
 
-- [Babel docs](https://developit.github.io/babel-legacy-docs//docs/advanced/loose/)
-- [2ality](http://2ality.com/2015/12/babel6-loose-mode.html)
+- [Babel docs](https://developit.github.io/babel-legacy-docs//docs/advanced/loose/): details how it differs in implementation from normal transpiling
+- [2ality](http://2ality.com/2015/12/babel6-loose-mode.html): lists what specific edge cases to avoid w/ loose mode
