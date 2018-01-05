@@ -49,3 +49,11 @@ module: {
 - Velvet (not sure why in here?)
 - Vector2D
 - UISplitText
+
+### classCallCheck definition
+- ~151 b / instance 
+- 24 instances x 151 b = __3.54 kb__
+
+### createClass definition 
+- ~561 b / instance
+- 10 x 561 = __5.48 kb__
