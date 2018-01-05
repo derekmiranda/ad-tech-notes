@@ -38,6 +38,7 @@ module: {
 ```
 - duplicate classCallCheck and createClass functions and calls (Babel? helper fns)
   - performance and size hit
+- redefining `defineProperties` function as part of ES6 class Babel-ing within every transformed class
 
 ### Unused but included modules
 - TzDate (import by DateFormatter)
@@ -47,3 +48,4 @@ module: {
 - Timezone (import by DateFormatter)
 - Velvet (not sure why in here?)
 - Vector2D
+- UISplitText
