@@ -53,4 +53,10 @@ module: {
 # 1/8/18 Rollup x Babel loader
 - decided to do the Babel transform directly in the Webpack Rollup loader (source*)
 - Decreased bundle size from __93.8kb__ to __66.1kb__
+- keeps modules that should remain tree-shaken out
+- doesn't seem to duplicate Babel helpers
+
+## Still to solve
 - However, would like a more elegant/clean way of achieving this, ideally purely thru Webpack config
+- ~20kb above idle bundle size (~40-45 kb)
+  - Removing Loader and other dependencies shared b/w build and index bundle could help bring that down
