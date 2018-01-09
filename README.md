@@ -49,3 +49,8 @@ module: {
 - Velvet (not sure why in here?)
 - Vector2D
 - UISplitText
+
+# 1/8/18 Rollup x Babel loader
+- decided to do the Babel transform directly in the Webpack Rollup loader (source*)
+- Decreased bundle size from __93.8kb__ to __66.1kb__
+- However, would like a more elegant/clean way of achieving this, ideally purely thru Webpack config
