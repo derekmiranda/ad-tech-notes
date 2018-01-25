@@ -36,6 +36,10 @@ Stuffs all the binary stuff inside a .png
 	- then calls `packNewChunk(type, fullAsset)`
 - `packNewChunk` - processes assets a bit more then pushes onto list of Buffers to put into .png
 
+# Regarding dynamic images from external sources
+- These are dynamic images you'd add w/ `ImageManager.addToLoad(url)`
+- These images need to be run before ad starts
+
 # Questions
 
 - How can I route distributed image/font imports to the Assets Plugin?
