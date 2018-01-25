@@ -1,12 +1,19 @@
 # Enabling Binary Imports in build modules
 
+# What I need to do
+- Route image/font imports to:
+	- ImageManager.addToLoad - so UIImage's and such can access
+	- Then to Payload Plugin (?) so it can put that images' binary data into the FBA 
+
+# Current Process
+
 Currently: images/fonts enter from `.image-imports.js` and `.font-imports.js`
 
 vvv
 
 ## Payload Plugin
 
-In method, `refreshPaylodStore`:
+In method, `refreshPaylodStore` (happens on compiler's `emit` stage):
 - looks for the `.image/font-imports` module w/in the Webpack `compilation` instance
 - updates image and font entries in `DM.payload.store` w/ `.image/font-imports`' dependencies found in Webpack compilation
 	- attaches img/font dependencies to entries in `DM.payload.store`
