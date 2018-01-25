@@ -2,8 +2,7 @@
 
 # What I need to do
 - Route image/font imports to:
-	- ImageManager.addToLoad - so UIImage's and such can access
-	- Then to Payload Plugin (?) so it can put that images' binary data into the FBA 
+	- Payload Plugin (?) so it can put that images' binary data into the FBA 
 
 # Current Process
 
