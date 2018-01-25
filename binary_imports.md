@@ -49,6 +49,7 @@ Stuffs all the binary stuff inside a .png
 
 # Questions
 
-- How are images added to ImageManager w/o explicit addToLoad calls in build.js? Is it in the injected ad-entry script?
 - How can I route distributed image/font imports to the Payload/Assets Plugin?
 - Where are the .image/font-imports' dependencies pulled and put into the Assets Plugin?
+- How are images added to ImageManager w/o explicit addToLoad calls in build.js?
+	- *PrepareCore loads FBA images*
