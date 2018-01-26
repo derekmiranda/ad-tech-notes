@@ -1,6 +1,15 @@
 # Enabling Binary Imports in build modules
 
 # What I need to do
+- Prevent wrb-loader from cutting off dependency graph
+- Get distributed image imports into compilations _modules graph
+	- However: applying Rollup's image plugin prevents the image from going inside the graph...
+	- OPTIONS:
+		1. Try to get modules fed thru url-loader before rollup-babel-loader
+			- I think would add it to the compilation's _modules
+			- allow using Webpack loader instead of Rollup plugin
+		2. Try to add image imports manually to _modules
+
 - Route image/font imports to:
 	- Payload Plugin (?) so it can put that images' binary data into the FBA 
 
@@ -44,7 +53,7 @@ Stuffs all the binary stuff inside a .png
 
 # Regarding dynamic images from external sources
 - These are dynamic images you'd add w/ `ImageManager.addToLoad(url)`
-- These images need to be run before ad starts
+- These images need to be added before ad starts
 
 # Questions
 
