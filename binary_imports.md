@@ -2,6 +2,10 @@
 
 # What I need to do
 - Prevent wrb-loader from cutting off dependency graph
+	- MAYBE: since wrb-loader specifies only 1 module to pass to it, Rollup takes that module and handles all of the graph analysis and compilation. Since Webpack is handing that part off to Rollup, it's not able to properly build out a dependency graph.
+	- also explains why the Webpack image/font loaders are not being applied: Webpack hands that entry module off to Rollup and says "I'm done"
+	- SO: need to pass that information somehow to Webpack?
+
 - Get distributed image imports into compilations _modules graph
 	- However: applying Rollup's image plugin prevents the image from going inside the graph...
 	- OPTIONS:
