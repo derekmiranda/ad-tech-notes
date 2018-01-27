@@ -3,6 +3,9 @@
 # What I need to do
 - Prevent rollup-plugin-url from cutting off dependency graph
   - w/o it, builds don't work but dependency graph includes images >:(
+  - things I've tried but don't work:
+    - calling this.addDependency in loader context to try to get image into dep graph
+    - return null if image from 'load' Rollup hook to try and let Webpack's loaders handle image 
 
 - Get distributed image imports into compilations _modules graph
 	- However: applying Rollup's image plugin prevents the image from going inside the graph...
