@@ -5,7 +5,9 @@
 	- `deployManager`: The DeployManager instance shared by all of our other plugins. This will store the binary imports found by Rollup.
 	- `fbaTypes`: An array of FBA type metadata objects, following this schema:
 		- `type`: The string representing the appropriate FBA type, as used by `fba-compiler`
-			- either "fbAf", "fbAi", "fbAc" 
+			- `fbAf` for fonts
+			- `fbAi` for images
+			- `fbAc` for copying (?)
 		- `include`: An array of minimatch patterns describing the types of files that match `type`
 			- for example, for images (type "fbAi"), the `include` array would be something like: `['**/*.png', '**/*.jpg']` 
 		- `exclude`: An optional array of minimatch patterns to exclude
