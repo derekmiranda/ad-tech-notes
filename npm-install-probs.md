@@ -7,7 +7,14 @@
 ## `.DELETE` files
 
 Tries to rename some file to that file w/ `.DELETE` appeneded to filename. However, getting `ENOENT` errors since file that npm is trying to rename doesn't exist during renaming
-- some type of race condition?
+
+General outline:
+
+```
+npm ERR! enoent ENOENT: no such file or directory, rename '.../project/node_modules/package' -> '.../project/node_modules/.package.DELETE'
+```
+- depth of node_modules can vary as well (meaning it could be in the node_modules of a dependency)
+- some type of race condition? Folder npm is trying to rename no longer exists
 
 ### Suspected causes?
 
@@ -28,7 +35,7 @@ Tries to rename some file to that file w/ `.DELETE` appeneded to filename. Howev
 
 __Legend__
 - npm install = i
-- npm install <pkg> = i <pkg>
+- npm install \<pkg> = i \<pkg>
 - error = x
 - ok = o
 
