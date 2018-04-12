@@ -16,6 +16,19 @@ npm ERR! enoent ENOENT: no such file or directory, rename '.../project/node_modu
 - depth of node_modules can vary as well (meaning it could be in the node_modules of a dependency)
 - some type of race condition? Folder npm is trying to rename no longer exists
 
+### Observations
+
+- within `npm` source, `.DELETE` renaming happens in `finalize` action function [source](https://github.com/npm/npm/blob/5e426a78ca02d0044f8dd26e0c5f881217081cbd/lib/install/action/finalize.js#L23)
+- more specifically, seems to be happening in `moveOldDestinationAway` function w/in same module
+	- deletes package at `delpath (.package.DELETE)`
+	- moves package to `delpath` <- HERE is where the `ENOENT` rename error seems to occur
+- `moveOldDest...` used by `moveStagingToDestination`
+	- checks if destination's clear
+	- actually moves staging
+- diff b/w recent project that's working and older project
+  - recent - `sockjs-client` in top level of `node_modules`
+  - older - `sockjs-client` NOT seen anywhere, not in top-level or inside `shoe` `node_modules`, of which it is a dependency
+
 ### Suspected causes?
 
 - Could be related to `package-lock`?
@@ -58,3 +71,5 @@ __Actions__
 7. i -> i sockjs-client -> o, o
 8. i -> i -D FAT/wp-creative-server -> o
 
+__with older project__
+- got the error when installing react
